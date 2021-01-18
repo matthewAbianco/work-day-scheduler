@@ -35,10 +35,19 @@ let btn4pm = $("#4pmBtn");
 let btn5pm = $("#5pmBtn");
 // save button end
 
-// measures the current time by each hour, so we can compare it to the data value of "data-time"
+// measures time by the hour and makes an integer out of it, so the integer value can be used below
 var currentTime = parseInt(moment().format("HH"));
 console.log(currentTime);
 
+// clock at top of page
+$('#currentDay');
+
+function update() {
+  $('#currentDay').html(moment().format('D. MMMM YYYY H:mm:ss'));
+}
+setInterval(update, 1);
+
+// checks what the current time is and compares it against the 'parseInt
 function checkTime() {
 
 // 9 am time check
@@ -187,13 +196,5 @@ function checkTime() {
 };
 
 
-// clock at top of page
-$('#currentDay');
-
-function update() {
-  $('#currentDay').html(moment().format('D. MMMM YYYY H:mm:ss'));
-}
-
-setInterval(update, 1);
 
 checkTime();
