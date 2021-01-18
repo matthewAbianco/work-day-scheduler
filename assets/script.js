@@ -1,3 +1,5 @@
+
+//clock at top of page
 $('#currentDay');
 
 function update() {
@@ -5,3 +7,4 @@ function update() {
 }
 
 setInterval(update, 1);
+//clock at top of page end
