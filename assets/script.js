@@ -1,5 +1,4 @@
 
-$(document).ready(function() {
 // hour box
 let time9am = $('#9amTime');
 let time10am = $('#10amTime');
@@ -42,6 +41,7 @@ console.log(currentTime);
 
 function checkTime() {
 
+// 9 am time check
     if (parseInt(time9am.attr('data-time')) < currentTime) {
         text9am.removeClass('past present future');
         text9am.addClass('past');
@@ -57,7 +57,133 @@ function checkTime() {
         text9am.addClass('future');
     }
     
-    checktime();
+// 10 am time check
+    if (parseInt(time10am.attr('data-time')) < currentTime) {
+        text10am.removeClass('past present future');
+        text10am.addClass('past');
+
+    } else if (parseInt(time10am.attr('data-time')) === currentTime) {
+        text10am.removeClass('past present future');
+        text10am.addClass('present');
+
+
+    } else {
+
+        text10am.removeClass('past present future');
+        text10am.addClass('future');
+    }
+    
+// 11 am time check  
+    if (parseInt(time11am.attr('data-time')) < currentTime) {
+        text11am.removeClass('past present future');
+        text11am.addClass('past');
+
+    } else if (parseInt(time11am.attr('data-time')) === currentTime) {
+        text11am.removeClass('past present future');
+        text11am.addClass('present');
+
+
+    } else {
+
+        text11am.removeClass('past present future');
+        text11am.addClass('future');
+    }    
+
+// 12 am time check
+    if (parseInt(time12am.attr('data-time')) < currentTime) {
+        text12am.removeClass('past present future');
+        text12am.addClass('past');
+
+    } else if (parseInt(time12am.attr('data-time')) === currentTime) {
+        text12am.removeClass('past present future');
+        text12am.addClass('present');
+
+
+    } else {
+
+        text12am.removeClass('past present future');
+        text12am.addClass('future');
+    }
+
+// 1 pm time check
+    if (parseInt(time1pm.attr('data-time')) < currentTime) {
+        text1pm.removeClass('past present future');
+        text1pm.addClass('past');
+
+    } else if (parseInt(time1pm.attr('data-time')) === currentTime) {
+        text1pm.removeClass('past present future');
+        text1pm.addClass('present');
+
+
+    } else {
+
+        text1pm.removeClass('past present future');
+        text1pm.addClass('future');
+    }
+        
+// 2 pm time check
+    if (parseInt(time2pm.attr('data-time')) < currentTime) {
+        text2pm.removeClass('past present future');
+        text2pm.addClass('past');
+
+    } else if (parseInt(time2pm.attr('data-time')) === currentTime) {
+        text2pm.removeClass('past present future');
+        text2pm.addClass('present');
+
+
+    } else {
+
+        text2pm.removeClass('past present future');
+        text2pm.addClass('future');
+    }
+    
+// 3 pm time check
+    if (parseInt(time3pm.attr('data-time')) < currentTime) {
+        text3pm.removeClass('past present future');
+        text3pm.addClass('past');
+
+    } else if (parseInt(time3pm.attr('data-time')) === currentTime) {
+        text3pm.removeClass('past present future');
+        text3pm.addClass('present');
+
+
+    } else {
+
+        text3pm.removeClass('past present future');
+        text3pm.addClass('future');
+    }
+
+// 4 pm time check
+    if (parseInt(time4pm.attr('data-time')) < currentTime) {
+        text4pm.removeClass('past present future');
+        text4pm.addClass('past');
+
+    } else if (parseInt(time4pm.attr('data-time')) === currentTime) {
+        text4pm.removeClass('past present future');
+        text4pm.addClass('present');
+
+
+    } else {
+
+        text4pm.removeClass('past present future');
+        text4pm.addClass('future');
+    }
+        
+// 5 pm time check
+    if (parseInt(time5pm.attr('data-time')) < currentTime) {
+        text5pm.removeClass('past present future');
+        text5pm.addClass('past');
+
+    } else if (parseInt(time5pm.attr('data-time')) === currentTime) {
+        text5pm.removeClass('past present future');
+        text5pm.addClass('present');
+
+
+    } else {
+
+        text5pm.removeClass('past present future');
+        text5pm.addClass('future');
+    }
 };
 
 
@@ -71,4 +197,3 @@ function update() {
 setInterval(update, 1);
 
 checkTime();
-});
