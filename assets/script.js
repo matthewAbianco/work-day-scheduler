@@ -36,7 +36,7 @@ text5pm.val(localStorage.getItem('5pm'));
 // 9 am save button
 nineAmBtn.addEventListener("click", function(event){
     event.preventDefault();
-    localStorage.setItem("9am", text9am);
+    localStorage.setItem("9am", JSON.stringify(text9am));
 });
 
 // 10 am save button
