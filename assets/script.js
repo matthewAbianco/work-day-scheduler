@@ -19,33 +19,67 @@ let text12am = $("#12amText");
 let text1pm = $("#1pmText");
 let text2pm = $("#2pmText");
 let text3pm = $("#3pmText");
-let text4pm = $("#4pmText");
+let textfourpm = $("#4pmText");
 let text5pm = $("#5pmText");
 // text area end
 
-// save button 
-let btn9am = $("#9amBtn");
-let btn10am = $("#10amBtn");
-let btn11am = $("#11amBtn");
-let btn12am = $("#12amBtn");
-let btn1pm = $("#1pmBtn");
-let btn2pm = $("#2pmBtn");
-let btn3pm = $("#3pmBtn");
-let btn4pm = $("#4pmBtn");
-let btn5pm = $("#5pmBtn");
-// save button end
 
-// measures time by the hour and makes an integer out of it, so the integer value can be used below
+
+// 9 am save button
+nineAmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("9am", text9am);
+});
+
+// 10 am save button
+tenAmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("10am", text10am);
+});
+// 11 am button
+elevenAmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("11am", text11am);
+});
+
+//12 am button
+twelveAmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("12am", text12am);
+});
+
+//1 pm button
+onePmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("1pm", text1pm);
+});
+
+// 2 pm button
+twoPmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("2pm", text2pm);
+});
+
+// 3 pm button
+threePmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("3pm", text3pm);
+});
+
+//4 pm button
+fourPmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("4pm", JSON.stringify(textfourpm));
+});
+
+//5 pm button
+nineAmBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.setItem("5pm", textfivepm);
+});
+// measures time by the hour and makes an integer out of it, so the integer value can be
 var currentTime = parseInt(moment().format("HH"));
 console.log(currentTime);
-
-// clock at top of page
-$('#currentDay');
-
-function update() {
-  $('#currentDay').html(moment().format('D. MMMM YYYY H:mm:ss'));
-}
-setInterval(update, 1);
 
 // checks what the current time is and compares it against the 'parseInt
 function checkTime() {
@@ -196,5 +230,13 @@ function checkTime() {
 };
 
 
+// clock at top of page
+$('#currentDay');
+
+function update() {
+  $('#currentDay').html(moment().format('D. MMMM YYYY H:mm:ss'));
+}
+
+setInterval(update, 1);
 
 checkTime();
