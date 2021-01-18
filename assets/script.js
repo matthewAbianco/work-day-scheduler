@@ -1,4 +1,3 @@
-
 $('#currentDay');
 
 function update() {
