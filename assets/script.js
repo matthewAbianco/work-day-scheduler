@@ -19,11 +19,19 @@ let text12am = $("#12amText");
 let text1pm = $("#1pmText");
 let text2pm = $("#2pmText");
 let text3pm = $("#3pmText");
-let textfourpm = $("#4pmText");
+let text4pm = $("#4pmText");
 let text5pm = $("#5pmText");
 // text area end
 
-
+text9am.val(localStorage.getItem('9am'));
+text10am.val(localStorage.getItem('10am'));
+text11am.val(localStorage.getItem('11am'));
+text12am.val(localStorage.getItem('12am'));
+text1pm.val(localStorage.getItem('1pm'));
+text2pm.val(localStorage.getItem('2pm'));
+text3pm.val(localStorage.getItem('3pm'));
+text4pm.val(localStorage.getItem('4pm'));
+text5pm.val(localStorage.getItem('5pm'));
 
 // 9 am save button
 nineAmBtn.addEventListener("click", function(event){
@@ -77,6 +85,16 @@ nineAmBtn.addEventListener("click", function(event){
     event.preventDefault();
     localStorage.setItem("5pm", textfivepm);
 });
+
+
+
+
+
+
+
+
+
+
 // measures time by the hour and makes an integer out of it, so the integer value can be
 var currentTime = parseInt(moment().format("HH"));
 console.log(currentTime);
